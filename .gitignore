@@ -1,0 +1,12 @@
+node_modules/
+dist/
+artifacts/
+cache/
+typechain-types/
+.vercel/
+
+.env
+.agentpay-spend.json
+coverage/
+coverage.json
+npm-debug.log*

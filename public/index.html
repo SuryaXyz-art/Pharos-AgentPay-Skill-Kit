@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pharos AgentPay Skill Kit</title>
+    <meta
+      name="description"
+      content="Reusable agentic payment Skill for native PHRS payments, x402 requests, spending limits, and on-chain receipts on Pharos."
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <canvas id="live-bg" aria-hidden="true"></canvas>
+
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Pharos AgentPay home">
+        <span class="brand-mark"></span>
+        <span>AgentPay</span>
+      </a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#contracts">Contracts</a>
+        <a href="#demo">Demo</a>
+        <a href="#deploy">Deploy</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Pharos Phase 1 Skill Module</p>
+          <h1>Agentic payments, receipts, and on-chain workflows for AI agents.</h1>
+          <p class="lede">
+            A reusable Skill Kit for native PHRS payments, x402-style payment requests,
+            spending limits, verified receipts, and composable agent economy modules.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#demo">Test demo API</a>
+            <a class="button" href="#contracts">View contracts</a>
+          </div>
+        </div>
+
+        <section class="terminal" aria-label="Live project status">
+          <div class="terminal-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <pre id="status-log">network: pharos-atlantic
+chainId: 688689
+asset: native PHRS
+skill: agentPaySkill()
+pipeline: runAgenticPipeline()
+receiptProof: on-chain verified</pre>
+        </section>
+      </section>
+
+      <section class="metrics" aria-label="Project metrics">
+        <article>
+          <strong>8</strong>
+          <span>deployed contracts</span>
+        </article>
+        <article>
+          <strong>13</strong>
+          <span>passing tests</span>
+        </article>
+        <article>
+          <strong>1</strong>
+          <span>agentic pipeline</span>
+        </article>
+        <article>
+          <strong>PHRS</strong>
+          <span>native payments</span>
+        </article>
+      </section>
+
+      <section id="features" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Composable Skill Surface</p>
+          <h2>Everything an agent needs to pay, verify, and coordinate.</h2>
+        </div>
+        <div class="feature-grid" id="feature-grid"></div>
+      </section>
+
+      <section id="contracts" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Pharos Atlantic Testnet</p>
+          <h2>Deployed contracts</h2>
+        </div>
+        <div class="contract-table" id="contract-table"></div>
+      </section>
+
+      <section id="demo" class="section split">
+        <div>
+          <p class="eyebrow">HTTP 402 Flow</p>
+          <h2>Test the paid report endpoint.</h2>
+          <p class="muted">
+            The endpoint returns an x402-style payment requirement until a verified
+            <code>x-payment-proof</code> header is supplied.
+          </p>
+          <div class="button-row">
+            <button class="button primary" id="health-btn" type="button">GET /health</button>
+            <button class="button" id="report-btn" type="button">GET /premium-report</button>
+          </div>
+        </div>
+        <div class="output-panel">
+          <div class="panel-title">Response</div>
+          <pre id="api-output">{ "ready": true }</pre>
+        </div>
+      </section>
+
+      <section id="deploy" class="section">
+        <div class="section-head">
+          <p class="eyebrow">Deployment Runbook</p>
+          <h2>Ship locally, on Pharos, and on Vercel.</h2>
+        </div>
+        <ol class="steps">
+          <li><code>npm install</code></li>
+          <li><code>cp .env.example .env</code></li>
+          <li>Add your funded Pharos Atlantic <code>PRIVATE_KEY</code>.</li>
+          <li><code>npm run compile</code></li>
+          <li><code>npm test</code></li>
+          <li><code>npm run deploy</code></li>
+          <li><code>npm run demo:server</code></li>
+          <li><code>npm run demo:x402</code></li>
+          <li><code>npm run demo:agentic</code></li>
+          <li><code>npx vercel --prod</code></li>
+        </ol>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Pharos AgentPay Skill Kit</span>
+      <span>Native PHRS. x402. Receipts. Agent workflows.</span>
+    </footer>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

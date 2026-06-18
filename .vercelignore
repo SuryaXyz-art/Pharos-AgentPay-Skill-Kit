@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+artifacts/
+cache/
+typechain-types/
+.git/
+.agents/
+.codex/

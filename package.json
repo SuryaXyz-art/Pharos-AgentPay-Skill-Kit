@@ -1,0 +1,46 @@
+{
+  "name": "pharos-agentpay-skill-kit",
+  "version": "0.1.0",
+  "description": "Reusable x402 payment, spending-limit, and receipt-proof Skill module for AI agents on Pharos.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "hardhat clean && if exist dist rmdir /s /q dist",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts --network pharosAtlantic",
+    "demo:server": "ts-node demo/server.ts",
+    "demo:pay": "ts-node examples/demo-pay.ts",
+    "demo:x402": "ts-node examples/full-x402-flow.ts",
+    "demo:agentic": "ts-node examples/agentic-pipeline.ts",
+    "demo:verify": "ts-node examples/verify-receipt.ts",
+    "vercel:deploy": "vercel --prod",
+    "test": "hardhat test"
+  },
+  "keywords": [
+    "pharos",
+    "x402",
+    "ai-agent",
+    "payments",
+    "skill",
+    "hardhat",
+    "ethers"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.4",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.9.0",
+    "chai": "^4.5.0",
+    "hardhat": "^2.22.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
